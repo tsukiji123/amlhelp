@@ -1,0 +1,88 @@
+* {
+    box-sizing:border-box;
+    font-size:12px;
+    margin:0;
+    padding:0;
+}
+page {
+    display:block;
+    width:770px;
+    background-image:url(img/logo.png);
+    background-repeat:no-repeat;
+    background-position:421px top;
+    padding-top:38px;
+    position:relative;
+    height:293mm;
+    overflow:hidden;
+    padding-bottom:2rem;
+    page-break-after:always;
+}
+number {
+    width:100%;
+    position:absolute;
+    left:0;
+    bottom:0;
+    text-align: center;
+    background-color:gray;
+    color:white;
+    height:2rem;
+    line-height:2rem;
+    font-weight: bold;
+    border-radius:4px;
+}
+/******************************************************/
+a {
+    font-size:inherit;
+    /*color:blue;*/
+}
+strong {
+    color:red;
+}
+em {
+    font-weight:bold;
+}
+hr {
+    margin-top:1rem;
+    margin-left:4rem;
+    margin-right:1rem;
+}
+h1 {
+    width:770px;
+    height:50px;
+    background-image:url(img/header.png);
+    line-height:50px;
+    font-weight:bold;
+    font-size:2rem;
+    color:#fff;
+    padding-left:1em;
+    margin-top:1rem;
+}
+h2 {
+    margin-top:1rem;
+    font-size:1.5rem;
+    font-weight:bold;
+    margin-left:4rem;
+}
+h2:before {
+    content:"●";
+    margin-right:.5rem;
+}
+h3 {
+    margin-top:1rem;
+    font-size:1.25rem;
+    font-weight:bold;
+    margin-left:6rem;
+}
+h3:before {
+    content:"■";
+    margin-right:.5rem;
+}
+p {
+    margin-left:6rem;
+    margin-right:1rem;
+    margin-top:1rem;
+    margin-bottom:2rem;
+}
+img {
+    max-width:100%;
+}

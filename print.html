@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="help.css">
+		<style>body { width:770px; margin:0 auto; }</style>
+	</head>
+	<body></body>
+	<script>
+		var {remote,ipcRenderer} = require('electron');
+		var fs = require('fs');
+		ipcRenderer.on('print_pdf',function(evt,data){
+			document.body.innerHTML = data;
+			remote.dialog.showSaveDialog().then(function(ret){
+				if (ret.filePath) {
+					remote.getCurrentWebContents().printToPDF({
+						marginsType:1,
+						pageSize:'A4',
+						printBackground:true
+					}).then(function(data){
+						fs.writeFileSync(ret.filePath,data);
+						close();
+					});
+				} else {
+					close();
+				}
+			});
+		});
+	</script>
+</html>
