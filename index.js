@@ -59,6 +59,15 @@ function open_file(){
 function save_file() {
 	if (curFile) {
 		fs.writeFileSync(curFile,editor.getValue());
+	} else {
+		remote.dialog.showSaveDialog().then(function(ret){
+			if (ret.filePath) {
+				curFile = ret.filePath;
+				var dir = 'file://'+path.dirname(curFile).replace(/\\/g,'/')+'/';
+				marked.setOptions({baseUrl:dir});
+				fs.writeFileSync(curFile,editor.getValue());
+			}
+		});
 	}
 }
 
